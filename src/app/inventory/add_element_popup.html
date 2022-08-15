@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Please enter the details</h1>
+<div mat-dialog-content>
+
+
+  <p >
+    <mat-form-field class="form-field" class="form-field-item" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input [(ngModel)]="name" type="text" matInput required ngModel placeholder="Name">
+    </mat-form-field>
+</p>
+
+
+
+<p >
+  <mat-form-field class="form-field" class="form-field-item" appearance="outline">
+    <mat-label>Part Number</mat-label>
+    <input [(ngModel)]="part_number" type="text" matInput required ngModel placeholder="Part Number">
+  </mat-form-field>
+</p>
+
+<p >
+  <mat-form-field class="form-field" class="form-field-item" appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input [(ngModel)]="quantity" type="text" matInput required ngModel placeholder="Quantity">
+  </mat-form-field>
+</p>
+
+
+
+      
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="sendData()" cdkFocusInitial>Save</button>
+</div>
+

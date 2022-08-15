@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>Please enter the details</h1>
+<div mat-dialog-content>
+  <p>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Employee</mat-label>
+    <mat-select (valueChange)="employee_change($event)">
+      <mat-option *ngFor="let employee of employees; let i = index"  value="{{i}}">{{employee}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Search Item</mat-label>
+    <input (keyup)="item_name_filter($event)" type="text" matInput ngModel placeholder="Search Item">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select Item</mat-label>
+    <mat-select (valueChange)="item_value_change($event)" >
+      <mat-option *ngFor="let option of filteredOptions;  let i = index"  value="{{i}}">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Part Number</mat-label>
+      <mat-select    [(ngModel)]="selected_part_number_value" (valueChange)="part_number_change($event)">
+        <option value="" disabled selected></option>
+        <mat-option  *ngFor="let part_option of part_number_options;  let i = index"  value="{{i}}">{{part_option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+    <!--Using ng-option and for loop-->
+    <!-- <ng-select [(ngModel)]="selected_name" (change)="onNameChange($event)" class="custom">
+      <ng-option class="ng-select-option" *ngFor="let option of options" [value]="option.id">{{option.name}}</ng-option>
+    </ng-select>
+
+    <ng-select [(ngModel)]="selected_part_number" class="custom">
+      <ng-option class="ng-select-option" *ngFor="let option2 of part_number_options" [value]="option2.id">{{option2.name}}</ng-option>
+    </ng-select> -->
+
+    <p >
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input [(ngModel)]="selected_quantity" type="text" matInput required ngModel placeholder="Quantity">
+      </mat-form-field>
+
+      &nbsp;&nbsp; <span *ngIf="available_quantity" > {{available_quantity}} </span>
+      
+  </p>
+
+
+      
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="sendData()" cdkFocusInitial>Save</button>
+</div>
+

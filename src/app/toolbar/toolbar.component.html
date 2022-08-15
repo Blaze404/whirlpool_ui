@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon >polymer</mat-icon>
+      </button>
+      <h1>Whirlpool</h1>
+      &nbsp;&nbsp;&nbsp;
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button  [ngClass]="{'active': activeTab === '/'}" [routerLink]="'/'"> Dashboard </a>
+        <a mat-button [ngClass]="{'active': activeTab === '/inventory'}" [routerLink]="'/inventory'"> Inventory </a>
+        <a mat-button [ngClass]="{'active': activeTab === '/stats'}" [routerLink]="'/stats'"> Statistics </a>
+  
+      </div>
+    </mat-toolbar-row>
+  
+    
+  </mat-toolbar>
+  
