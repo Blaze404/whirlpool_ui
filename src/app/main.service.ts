@@ -13,7 +13,7 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
 
-  private baseURL = "http://172.105.252.13:8000/api"
+  private baseURL = "https://172.105.252.13:8001/api"
 
   private loginUrl = "login/";
   private dashboardUrl = "dashboard/";
