@@ -8,18 +8,16 @@ import { InventoryComponent } from './inventory/inventory.component';
 
 const routes: Routes = [
   { path:  '', component:  DashboardComponent
-  // ,canActivate: [AuthGuard]
+  ,canActivate: [AuthGuard]
 },
   {path: 'login', component: LoginComponent
   },
-  { path:  '', component:  DashboardComponent
-      // ,canActivate: [AuthGuard]
-    },
+  
     { path:  'stats', component:  StatisticsComponent
-      // ,canActivate: [AuthGuard]
+      ,canActivate: [AuthGuard]
     },
     { path:  'inventory', component:  InventoryComponent
-      // ,canActivate: [AuthGuard]
+      ,canActivate: [AuthGuard]
     },
 ];
 
