@@ -13,7 +13,7 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
 
-  private baseURL = "https://172.105.252.13:8001/api"
+  private baseURL = "https://cygnusbackend.in/api"
 
   private loginUrl = "login/";
   private dashboardUrl = "dashboard/";
