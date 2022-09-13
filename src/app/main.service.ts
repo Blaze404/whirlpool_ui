@@ -13,7 +13,7 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
 
-  private baseURL = "https://cygnusbackend.in/api"
+  private baseURL = "https://whirlpool.azurewebsites.net/api"
 
   private loginUrl = "login/";
   private dashboardUrl = "dashboard/";
